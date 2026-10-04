@@ -255,15 +255,6 @@ This is a much larger experiment: seven variants x three runs x 50 epochs. Exist
 
 Before treating V4-V7 as GA-conditioned experiments, fix the batch field issue described above.
 
-## A few practical notes
-
-- The notebook contains several model definitions and some classes are redefined in later cells. For reliable reproduction, run the cells in their intended order rather than executing isolated cells from the middle.
-- The main results and the later ablation results come from slightly different model/evaluation code paths, so they should be reported as separate experiments.
-- The preprocessing function currently has stronger augmentation code commented out. The first preprocessing pass mainly resizes the data; the training loader applies the active augmentations.
-- Checkpoints are selected using validation Dice.
-- The test set should only be used for final evaluation, not for choosing model settings.
-- If this code is moved from the notebook into a repository, splitting it into `dataset.py`, `models.py`, `losses.py`, `train.py`, and `evaluate.py` would make the experiment easier to reproduce.
-
 ## Dataset and citation
 
 The data downloader points to:
@@ -271,10 +262,4 @@ The data downloader points to:
 **Zenodo record 8265464**  
 https://zenodo.org/records/8265464
 
-Please use the citation and license information provided on the Zenodo record when publishing results based on the dataset.
 
-If this repository accompanies a paper or thesis, add the final paper citation here once it is available.
-
-## License
-
-No project license is defined inside the notebook. Add a `LICENSE` file before redistributing the code publicly, and keep the dataset under its original license terms.
